@@ -1,0 +1,44 @@
+/*---------------------------------------------------------------------------
+linear
+----------------------------------------------------------------------------*/
+import java.util.*;
+
+public class linear {
+    public static int linear_search(int arr[], int key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key)
+                return i;
+        }
+        return -1;
+    }
+
+    public static void print(int arr[], int n) {
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter array size: ");
+        int n = sc.nextInt();
+
+        int arr[] = new int[n];
+        System.out.println("enter array elements: ");
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        print(arr, n);
+
+        System.out.println("enter element to be found: ");
+        int x = sc.nextInt();
+
+        int result = linear_search(arr, x);
+        if (result == -1) {
+            System.out.println("element not found ");
+        } else {
+            System.out.println("element found at index: " + result);
+        }
+        sc.close();
+    }
+}
